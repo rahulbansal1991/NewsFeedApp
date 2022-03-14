@@ -46,13 +46,65 @@
                     <view key="view" contentMode="scaleToFill" id="ivf-RV-Q3G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yxL-6Q-6dT">
+                                <rect key="frame" x="16" y="60" width="382" height="177"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yxL-6Q-6dT" secondAttribute="height" multiplier="382:177" id="Gmj-ua-4gg"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8p3-Tx-CuY">
+                                <rect key="frame" x="16" y="274" width="382" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEs-dJ-4LW">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v37-30-1dX">
+                                        <rect key="frame" x="0.0" y="16" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujG-Xc-lDD">
+                                        <rect key="frame" x="0.0" y="32" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5K-el-gVx">
+                                        <rect key="frame" x="0.0" y="48" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TZk-tV-bnM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yxL-6Q-6dT" firstAttribute="leading" secondItem="TZk-tV-bnM" secondAttribute="leading" constant="16" id="GK7-7z-Hmd"/>
+                            <constraint firstItem="8p3-Tx-CuY" firstAttribute="top" secondItem="yxL-6Q-6dT" secondAttribute="bottom" constant="37" id="JbX-XA-eJa"/>
+                            <constraint firstItem="8p3-Tx-CuY" firstAttribute="leading" secondItem="TZk-tV-bnM" secondAttribute="leading" constant="16" id="SzN-B1-3Hi"/>
+                            <constraint firstItem="TZk-tV-bnM" firstAttribute="trailing" secondItem="8p3-Tx-CuY" secondAttribute="trailing" constant="16" id="Zx3-iO-qqw"/>
+                            <constraint firstItem="yxL-6Q-6dT" firstAttribute="centerX" secondItem="ivf-RV-Q3G" secondAttribute="centerX" id="kgy-bH-Mk6"/>
+                            <constraint firstItem="yxL-6Q-6dT" firstAttribute="top" secondItem="TZk-tV-bnM" secondAttribute="top" constant="16" id="kr5-Vl-KZ7"/>
+                            <constraint firstItem="TZk-tV-bnM" firstAttribute="trailing" secondItem="yxL-6Q-6dT" secondAttribute="trailing" constant="16" id="rBR-bf-j22"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgvNewsImage" destination="yxL-6Q-6dT" id="6mz-e3-I7a"/>
+                        <outlet property="lblAuthor" destination="ujG-Xc-lDD" id="lOj-ev-ZVL"/>
+                        <outlet property="lblDate" destination="O5K-el-gVx" id="g6A-Le-jWf"/>
+                        <outlet property="lblNewsDescription" destination="v37-30-1dX" id="wHD-NU-m3g"/>
+                        <outlet property="lblNewsTitle" destination="IEs-dJ-4LW" id="aVe-L9-kv8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRl-kO-I1g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="86"/>
+            <point key="canvasLocation" x="1662.3188405797102" y="85.714285714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dw3-SY-dRA">

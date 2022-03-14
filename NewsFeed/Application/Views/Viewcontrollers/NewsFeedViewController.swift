@@ -61,6 +61,11 @@ class NewsFeedViewController: UIViewController {
         
         loadNews()
     }
+    
+    func navigateToNewsDetailScreen(newsArticle: Article) {
+        let newsDetailVC = NewsDetailViewController.instantiateViewController(newsArticle: newsArticle)
+        self.navigationController?.pushViewController(newsDetailVC, animated: true)
+    }
 }
 
 extension NewsFeedViewController : UITableViewDataSource, UITableViewDelegate {
@@ -85,5 +90,7 @@ extension NewsFeedViewController : UITableViewDataSource, UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // Navigate to News Detail screen
+        navigateToNewsDetailScreen(newsArticle: viewModel.arrNewsArticles[indexPath.row])
     }
 }
