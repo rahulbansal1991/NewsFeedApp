@@ -31,8 +31,12 @@ class NewsFeedViewController: UIViewController {
         
         tableView.register(UINib(nibName: "NewsFeedTableViewCell", bundle: nil), forCellReuseIdentifier: NewsFeedViewController.CellReuseIdentifier)
         
-        addPullToRefresh()
+        let rightButtonItem = UIBarButtonItem.init(title: "USA", style: .plain, target: self, action: #selector(rightButtonAction(sender:))
+        )
+        self.navigationItem.rightBarButtonItem = rightButtonItem
         
+        addPullToRefresh()
+                
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -67,6 +71,25 @@ class NewsFeedViewController: UIViewController {
         let newsDetailVC = NewsDetailViewController.instantiateViewController(newsArticle: newsArticle)
         self.navigationController?.pushViewController(newsDetailVC, animated: true)
     }
+    
+    @objc func rightButtonAction(sender: UIBarButtonItem) {
+        
+        let usa = Country(name: "USA", abbrivation: "us")
+        let canada = Country(name: "Canada", abbrivation: "ca")
+        
+        let datasource = [usa, canada]
+        let pickerView = CustomPickerView(datasource: datasource)
+        pickerView.delegate = self
+        pickerView.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height - 160, width: UIScreen.main.bounds.size.width, height: 160)
+        self.view.addSubview(pickerView)
+    }
+    
+    func updateTitleOfNavigationBarButton(value : String) {
+        let item = self.navigationItem.rightBarButtonItem!
+        if let button = item as? UIBarButtonItem {
+            button.title = value
+        }
+    }
 }
 
 extension NewsFeedViewController : UITableViewDataSource, UITableViewDelegate {
@@ -93,5 +116,17 @@ extension NewsFeedViewController : UITableViewDataSource, UITableViewDelegate {
         
         // Navigate to News Detail screen
         navigateToNewsDetailScreen(newsArticle: viewModel.arrNewsArticles[indexPath.row])
+    }
+}
+
+extension NewsFeedViewController : CustomPickerViewDelegate {
+    
+    func selectedRecord(country : Country) {
+        
+        UserPreferenceManager.shared.saveUserCountryPreference(value: country.abbrivation)
+        
+        updateTitleOfNavigationBarButton(value: country.name)
+        
+        loadNews()
     }
 }

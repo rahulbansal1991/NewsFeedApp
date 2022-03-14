@@ -16,7 +16,7 @@ class UserPreferenceManager {
     
     private init() {
         // make the constructor private
-        
+        userCountry = fetchUserCountryPreference()
     }
     
     var country : String {
@@ -24,16 +24,19 @@ class UserPreferenceManager {
     }
     
     // Set default country as US
-    private var userCountry : String = "us"
+    private var userCountry : String!
     
-    func fetchUserCountryPreference() {
+    func fetchUserCountryPreference() -> String {
         let defaults = UserDefaults.standard
-        userCountry = defaults.string(forKey: "UserPreferredCountry") ?? "us"
+        return defaults.string(forKey: "UserPreferredCountry") ?? "us"
     }
     
-    func saveUserCountryPreference() {
+    func saveUserCountryPreference(value : String) {
+        
+        userCountry = value
+        
         let defaults = UserDefaults.standard
-        defaults.set(userCountry, forKey: "UserPreferredCountry")
+        defaults.set(value, forKey: "UserPreferredCountry")
         defaults.synchronize()
     }
 }
