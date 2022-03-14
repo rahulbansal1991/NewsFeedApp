@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsFeedTableViewCell" rowHeight="71" id="KGk-i7-Jjw" customClass="NewsFeedTableViewCell" customModule="NewsFeed" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o9I-13-21c">
+                        <rect key="frame" x="8" y="11.5" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="o9I-13-21c" secondAttribute="height" multiplier="1:1" id="Q6Z-u0-iJh"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tXV-9V-nxB">
+                        <rect key="frame" x="72" y="8" width="240" height="55"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjr-GN-Rr9">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUl-1l-dP4">
+                                <rect key="frame" x="0.0" y="21" width="240" height="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQT-cV-x0f">
+                                <rect key="frame" x="0.0" y="42" width="240" height="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tXV-9V-nxB" secondAttribute="trailing" constant="8" id="9y1-vm-tgb"/>
+                    <constraint firstItem="o9I-13-21c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="JBX-e3-iLJ"/>
+                    <constraint firstItem="tXV-9V-nxB" firstAttribute="leading" secondItem="o9I-13-21c" secondAttribute="trailing" constant="16" id="Ovd-MH-8SR"/>
+                    <constraint firstAttribute="bottom" secondItem="tXV-9V-nxB" secondAttribute="bottom" constant="8" id="Xkr-dD-1st"/>
+                    <constraint firstItem="tXV-9V-nxB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="iep-zC-gnW"/>
+                    <constraint firstItem="o9I-13-21c" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.15" id="r33-Fa-qJ1"/>
+                    <constraint firstItem="o9I-13-21c" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xcj-TB-YE3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgvNewsThumbnail" destination="o9I-13-21c" id="E6Z-1I-vMw"/>
+                <outlet property="lblDate" destination="JQT-cV-x0f" id="Qat-rt-SBi"/>
+                <outlet property="lblNewsDescription" destination="SUl-1l-dP4" id="OPN-E0-HAs"/>
+                <outlet property="lblNewsTitle" destination="vjr-GN-Rr9" id="th2-z4-jZz"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="76.004464285714278"/>
+        </tableViewCell>
+    </objects>
+</document>
