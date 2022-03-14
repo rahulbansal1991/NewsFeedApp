@@ -31,8 +31,12 @@ class NewsFeedTableViewCell: UITableViewCell {
             lblDate.text = ""
         }
         
-        let url = URL(string: newsArticle.urlToImage)
-        imgvNewsThumbnail.kf.setImage(with: url)
+        if let imageURL = newsArticle.urlToImage {
+            let url = URL(string: imageURL)
+            imgvNewsThumbnail.kf.setImage(with: url)
+        } else {
+            imgvNewsThumbnail.image = UIImage(named: "placeholder")
+        }
     }
     
 }

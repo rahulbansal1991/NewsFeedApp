@@ -46,7 +46,11 @@ class NewsDetailViewController: UIViewController {
             lblDate.text = ""
         }
         
-        let url = URL(string: viewModel.newsArticle.urlToImage)
-        imgvNewsImage.kf.setImage(with: url)
+        if let imageURL = viewModel.newsArticle.urlToImage {
+            let url = URL(string: imageURL)
+            imgvNewsImage.kf.setImage(with: url)
+        } else {
+            imgvNewsImage.image = UIImage(named: "placeholder")
+        }
     }
 }

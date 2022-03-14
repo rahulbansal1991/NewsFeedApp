@@ -17,9 +17,10 @@ struct News: Codable {
 // MARK: - Article
 struct Article: Codable {
     let author: String?
-    let title, articleDescription: String
+    let title: String
+    let articleDescription: String?
     let url: String
-    let urlToImage: String
+    let urlToImage: String?
     let publishedAt: String
     let content: String?
 
