@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias NewsFeedFetchingViewModelAPIResponse = (Bool) -> Void
+typealias NewsFeedFetchingViewModelAPIResponse = (Bool, String?) -> Void
 
 final class NewsFeedViewModel {
     
@@ -23,9 +23,9 @@ final class NewsFeedViewModel {
             
             if let responseData = data, status {
                 self.arrNewsArticles = responseData.articles
-                completion(true)
+                completion(true, nil)
             } else {
-                completion(false)
+                completion(false, error)
             }
         }
     }

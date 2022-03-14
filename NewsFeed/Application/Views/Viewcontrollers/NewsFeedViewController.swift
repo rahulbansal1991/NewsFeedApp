@@ -44,14 +44,14 @@ class NewsFeedViewController: UIViewController {
     }
     
     func loadNews() {
-        viewModel.fetchNewsHeadlines { status in
+        viewModel.fetchNewsHeadlines { status, error in
             
             if status {
                 // Load data in tableview
                 self.tableView.reloadData()
             } else {
                 // Prompt error on screen
-                
+                Utility.showAlertWithOkButton(controller: self, title: Alerts.AlertTitle.error.rawValue, message: error)
             }
         }
     }

@@ -53,8 +53,6 @@ final class ClientHTTPNetworking : DataProvider {
         urlRequest.httpMethod = httpMethod
         urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         
-        print("URL:  \(url)")
-
         // Check if we have the parameters or not
         if let params = parameterDictionary {
             guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else {
@@ -62,9 +60,6 @@ final class ClientHTTPNetworking : DataProvider {
             }
             
             urlRequest.httpBody = httpBody
-            
-            let strParams = String(data: try! JSONSerialization.data(withJSONObject: params, options: .prettyPrinted), encoding: .utf8 ) ?? ""
-            print("Paramters: \(strParams)")
         }
         
         session.dataTask(with: urlRequest, completionHandler: { data, response, error in
