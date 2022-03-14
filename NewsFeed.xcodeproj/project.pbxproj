@@ -16,6 +16,7 @@
 		B71CCA3527DEB49E00ADA533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCA3127DEB49E00ADA533 /* LaunchScreen.storyboard */; };
 		B71CCA3627DEB49E00ADA533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCA3327DEB49E00ADA533 /* Main.storyboard */; };
 		B7368E0827DEE5BF009064CD /* NewsFeedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7368E0727DEE5BF009064CD /* NewsFeedDetailViewModel.swift */; };
+		B7368E0A27DEE903009064CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7368E0927DEE902009064CD /* GoogleService-Info.plist */; };
 		B7AA01C327DEB69E005EFD3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AA01C227DEB69E005EFD3C /* Constants.swift */; };
 		B7AA01C727DEB77D005EFD3C /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AA01C627DEB77D005EFD3C /* NewsFeedViewController.swift */; };
 		B7AA01C927DEBFC7005EFD3C /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AA01C827DEBFC7005EFD3C /* NewsDetailViewController.swift */; };
@@ -73,6 +74,7 @@
 		B71CCA3227DEB49E00ADA533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71CCA3427DEB49E00ADA533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7368E0727DEE5BF009064CD /* NewsFeedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDetailViewModel.swift; sourceTree = "<group>"; };
+		B7368E0927DEE902009064CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7AA01C227DEB69E005EFD3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B7AA01C627DEB77D005EFD3C /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		B7AA01C827DEBFC7005EFD3C /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				B71CCA2427DEB3FA00ADA533 /* Assets.xcassets */,
 				B71CCA2527DEB3FA00ADA533 /* Info.plist */,
+				B7368E0927DEE902009064CD /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 			files = (
 				B71CCA2627DEB3FA00ADA533 /* Assets.xcassets in Resources */,
 				B71CCA3627DEB49E00ADA533 /* Main.storyboard in Resources */,
+				B7368E0A27DEE903009064CD /* GoogleService-Info.plist in Resources */,
 				B7BC247627DEC39900B7B233 /* NewsFeedTableViewCell.xib in Resources */,
 				B71CCA3527DEB49E00ADA533 /* LaunchScreen.storyboard in Resources */,
 			);
