@@ -9,7 +9,7 @@ import Foundation
 
 typealias NewsFeedFetchingViewModelAPIResponse = (Bool) -> Void
 
-class NewsFeedViewModel {
+final class NewsFeedViewModel {
     
     let newsFeedService = NewsFeedService()
     var arrNewsArticles = [Article]()

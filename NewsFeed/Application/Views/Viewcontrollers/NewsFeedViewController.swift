@@ -10,11 +10,12 @@ import UIKit
 class NewsFeedViewController: UIViewController {
 
     static let CellReuseIdentifier = "NewsFeedTableViewCell"
-    var viewModel : NewsFeedViewModel = NewsFeedViewModel()
+    
+    private var viewModel : NewsFeedViewModel = NewsFeedViewModel()
     
     @IBOutlet weak var tableView: UITableView!
     
-    let refreshControl = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,7 +15,7 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet weak var lblAuthor: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     
-    private var newsArticle : Article!
+    private var viewModel: NewsFeedDetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class NewsDetailViewController: UIViewController {
     class func instantiateViewController(newsArticle : Article) -> NewsDetailViewController {
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsDetailViewController") as! NewsDetailViewController
-        vc.newsArticle = newsArticle
+        vc.viewModel = NewsFeedDetailViewModel(withNewsArticle: newsArticle)
         return vc
     }
     
@@ -37,16 +37,16 @@ class NewsDetailViewController: UIViewController {
     
     func loadData() {
      
-        lblNewsTitle.text = newsArticle.title
-        lblNewsDescription.text = newsArticle.articleDescription
+        lblNewsTitle.text = viewModel.newsArticle.title
+        lblNewsDescription.text = viewModel.newsArticle.articleDescription
         
-        if let date = newsArticle.publishedAt.date(format: DateFormatType.isoDateTimeSec.stringFormat) {
+        if let date = viewModel.newsArticle.publishedAt.date(format: DateFormatType.isoDateTimeSec.stringFormat) {
             lblDate.text = date.toString(format: DateFormatType.altRSS)
         } else {
             lblDate.text = ""
         }
         
-        let url = URL(string: newsArticle.urlToImage)
+        let url = URL(string: viewModel.newsArticle.urlToImage)
         imgvNewsImage.kf.setImage(with: url)
     }
 }

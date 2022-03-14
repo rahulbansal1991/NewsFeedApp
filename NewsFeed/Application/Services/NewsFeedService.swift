@@ -22,7 +22,7 @@ final class NewsFeedService {
     
     func fetchNewsHeadlines(country: String, completion : @escaping ResponseFetchCompleted) {
         
-        let parameters = ["country" : country, "apiKey" : "2ac6296bd4fc46c2abb4cd45afead4b6"]
+        let parameters = ["country" : country, "apiKey" : Constants.API_KEY]
 
         guard let strURL = queryString(APIContants.Endpoints.headlines.path, params: parameters) else { return completion(false, nil, "URL conversion Failed") }
         
